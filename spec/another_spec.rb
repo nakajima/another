@@ -25,5 +25,28 @@ describe Another do
       stub(Dir).pwd { '/User/foo' }
       runner.target_directory.should == '/User/foo/one-more'
     end
+    
+    describe "confirmation" do
+      context "when yes" do
+        it "is confirmed" do
+          stub($stdin).gets { "y" }
+          runner.should be_confirmed
+        end
+      end
+      
+      context "when no" do
+        it "is not confirmed" do
+          stub($stdin).gets { "n" }
+          runner.should_not be_confirmed
+        end
+      end
+      
+      context "when blank" do
+        it "it is not confirmed" do
+          stub($stdin).gets { '' }
+          runner.should_not be_confirmed
+        end
+      end
+    end
   end
 end
