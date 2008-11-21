@@ -27,20 +27,19 @@ module Another
       @args = args
       return if test_mode?
       return puts("Probably for the best.") unless confirmed?
-      say! "Copying files..."
+      say "Copying files..."
       FileUtils.mkdir target_directory
       Dir[File.join(template_directory, "**", "**")].each do |file|
         copy!(file.split('/templates/').last)
       end
-      say! "done!"
+      say "done!"
     end
     
     def confirmed?
-      true
-      say! "Warning: Creating new projects makes you vulnerable to mockery.".bold
-      say "Are you sure you want to create a new project? ".bold
-      answer = $stdin.gets.chomp
-      answer =~ /^y/i
+      say "Warning: Creating new projects makes you vulnerable to mockery.".bold
+      ask "Are you sure you want to create a new project? ".bold do |answer|
+        answer =~ /^y/i
+      end
     end
     
     def test_mode?
@@ -84,14 +83,13 @@ module Another
       File.read(template_directory(path))
     end
     
-    def say!(msg)
-      say(msg)
-      say("\n")
+    def say(msg)
+      puts(msg) unless test_mode?
     end
     
-    def say(msg)
-      return if test_mode?
-      print msg
+    def ask(msg)
+      print msg unless test_mode?
+      yield $stdin.gets.chomp
     end
   end
   
