@@ -1,8 +1,15 @@
 require 'rubygems'
-require 'nakajima'
+require 'colored'
 require 'fileutils'
-require 'activesupport'
 require 'erb'
+
+class Symbol
+  def to_proc
+    Proc.new do |item|
+      item.send(self)
+    end
+  end
+end
 
 class String
   def erb_eval(b)
@@ -51,7 +58,7 @@ module Another
     end
     
     def module_name
-      project_name.underscore.camelize
+      project_name.gsub(/\W+/, '_').split('_').map(&:capitalize).join
     end
     
     def target_directory(path='')
@@ -60,7 +67,7 @@ module Another
           Dir.pwd,
           project_name,
           path \
-            .gsub('PROJECT', project_name.underscore) \
+            .gsub('PROJECT', project_name.gsub(/\W+/, '_')) \
             .sans('.erb')
         ].compact.join("/")
     end
