@@ -13,6 +13,6 @@ class String
   end
   
   def sans(str)
-    self.gsub(str, '')
+    gsub(str, '')
   end
 end
