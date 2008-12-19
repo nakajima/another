@@ -43,7 +43,7 @@ module Another
     end
     
     def template_directory(path='')
-      File.expand_path(File.dirname(__FILE__) + '/../templates/' + path)
+      File.expand_path(File.dirname(__FILE__) + '/../../templates/' + path)
     end
     
     def copy!(path)

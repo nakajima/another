@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.default_executable = %q{another}
   s.email = %q{patnakajima@gmail.com}
   s.executables = ["another"]
-  s.files = ["README", "bin/another", "lib/another.rb", "spec/another_spec.rb", "spec/spec_helper.rb", "templates/README.textile", "templates/lib/PROJECT.rb.erb", "templates/lib/PROJECT/.gitignore", "templates/spec/PROJECT_spec.rb.erb", "templates/spec/spec_helper.rb.erb"]
+  s.files = Dir["./**/**/**/**"] << File.join(*%w[. templates lib PROJECT .gitignore])
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.0}
   s.summary = %q{My new Ruby project generator}
