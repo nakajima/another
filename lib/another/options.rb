@@ -22,7 +22,7 @@ module Another
         opts.on("-t", "--template TEMPLATE", "Specify a template (default: Ruby)") do |template|
           options.template = template
         end
-
+        
         opts.on_tail("-h", "--help", "Show this message") do
           puts opts
           exit!

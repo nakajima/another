@@ -1,4 +1,6 @@
 module Another
+  class InvalidTemplate < StandardError; end
+  
   class Runner
     attr_reader :options
     
@@ -11,6 +13,8 @@ module Another
     def perform!
       @performing = true
       
+      raise InvalidTemplate.new("`#{template}` is not a valid template.\nAvailable templates: #{available_templates.join(', ')}")
+      
       return unless confirmed?
       
       say "Copying files for #{template}..."
@@ -20,6 +24,10 @@ module Another
       end
       
       say "done!"
+    end
+    
+    def available_templates
+      Dir[template_path('../*')].map &File.method(:basename)
     end
     
     def manifest

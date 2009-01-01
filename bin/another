@@ -2,4 +2,9 @@
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'another')
 
-Another.run(ARGV)
+begin
+  Another.run(ARGV)
+rescue Another::InvalidTemplate => e
+  puts e.message
+  exit
+end

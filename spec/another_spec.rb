@@ -30,6 +30,19 @@ describe Another do
     end
     
     describe "template options" do
+      it "knows available templates" do
+        runner = Another::Runner.new(['one-more'])
+        runner.should have(3).available_templates
+        runner.available_templates.should include('js', 'ruby', 'sinatra')
+      end
+      
+      it "raises error when template invalid" do
+        runner = Another::Runner.new(['one-more', '--template', 'FOO'])
+        proc {
+          runner.perform!
+        }.should raise_error(Another::InvalidTemplate)
+      end
+      
       context "when no option specified" do
         before(:each) do
           @runner = Another::Runner.new(['one-more'])
@@ -40,7 +53,7 @@ describe Another do
         end
       end
       
-      context "when --sinatra" do
+      context "when specified" do
         before(:each) do
           @runner = Another::Runner.new(['one-more', '--template', 'sinatra'])
         end
