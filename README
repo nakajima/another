@@ -4,9 +4,9 @@ My new Ruby project generator.
 
 == Usage ==
 
-First install:
+First install it:
 
-  $ gem install nakajima-another
+  $ gem install another
 
 Then use:
 
