@@ -1,6 +1,6 @@
 = Another =
 
-My new Ruby project generator.
+My new project generator.
 
 == Usage ==
 
@@ -12,7 +12,21 @@ Then use:
 
   $ another some-project
 
-A directory named "some-project" will then be generated with some
-base project files.
+By default it will create a new generic Ruby project, ideal for
+creating gems.
+
+=== Templates ===
+
+You can generate other kinds of projects using the --template option:
+
+  $ another some-sinatra-app --template sinatra
+  $ another a-js-library --template js
+
+So far, the only templates are ruby, sinatra and js, but I'll be
+adding more soon.
+
+== TODO ==
+
+* Maybe make templates pluggable?
 
 (c) Copyright 2008 Pat Nakajima, released under the MIT License.
