@@ -1,0 +1,8 @@
+./lib
+./lib/PROJECT
+./lib/PROJECT/.gitignore
+./lib/PROJECT.rb
+./README.textile
+./spec
+./spec/PROJECT_spec.rb
+./spec/spec_helper.rb
