@@ -10,7 +10,9 @@ Gem::Specification.new do |s|
   s.default_executable = %q{another}
   s.email = %q{patnakajima@gmail.com}
   s.executables = ["another"]
-  s.files = Dir["./**/**/**/**"] << File.join(*%w[. templates lib PROJECT .gitignore])
+  s.files = Dir.glob('**/**/**/**/**/**', File::FNM_DOTMATCH) \
+    .reject { |f| f =~ /\.git\// } \
+    .reject { |f| f =~ /^\.{1,2}$/ }
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.0}
   s.summary = %q{My new Ruby project generator}
