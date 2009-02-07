@@ -28,5 +28,6 @@ adding more soon.
 == TODO ==
 
 * Maybe make templates pluggable?
+* Add a default gemspec to the ruby template
 
 (c) Copyright 2008 Pat Nakajima, released under the MIT License.
