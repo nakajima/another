@@ -1,5 +1,3 @@
-.
-./manifest.txt
 ./README.textile
 ./spec
 ./spec/PROJECT_spec.js

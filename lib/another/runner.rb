@@ -13,8 +13,6 @@ module Another
     def perform!
       @performing = true
       
-      raise InvalidTemplate.new("`#{template}` is not a valid template.\nAvailable templates: #{available_templates.join(', ')}")
-      
       return unless confirmed?
       
       say "Copying files for #{template}..."
@@ -31,7 +29,11 @@ module Another
     end
     
     def manifest
-      File.read(template_path('manifest.txt')).split(/\n+/).reject(&:blank?)
+      begin
+        File.read(template_path('manifest.txt')).split(/\n+/).reject(&:blank?)
+      rescue
+        raise InvalidTemplate.new("`#{template}` is not a valid template.\nAvailable templates: #{available_templates.join(', ')}")
+      end
     end
     
     def target
