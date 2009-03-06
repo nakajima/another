@@ -50,6 +50,7 @@ Gem::Specification.new do |s|
     templates/ruby
     templates/ruby/lib
     templates/ruby/lib/PROJECT
+    templates/ruby/lib/PROJECT/.gitignore
     templates/ruby/lib/PROJECT.rb
     templates/ruby/manifest.txt
     templates/ruby/README.textile
@@ -60,10 +61,12 @@ Gem::Specification.new do |s|
     templates/sinatra/app.rb
     templates/sinatra/manifest.txt
     templates/sinatra/public
+    templates/sinatra/public/.gitignore
     templates/sinatra/spec
     templates/sinatra/spec/PROJECT_spec.rb
     templates/sinatra/spec/spec_helper.rb
     templates/sinatra/views
+    templates/sinatra/views/.gitignore
     
   ]
   s.require_paths = ["lib"]

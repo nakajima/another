@@ -13,7 +13,7 @@ module Another
     def perform!
       @performing = true
       
-      return unless confirmed?
+      return unless $TESTING or confirmed?
       
       say "Copying files for #{template}..."
 
@@ -86,6 +86,7 @@ module Another
     end
     
     def say(msg)
+      return if $TESTING
       puts(msg) if performing?
     end
     
