@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{another}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pat Nakajima"]
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
     templates
     templates/js
     templates/js/manifest.txt
-    templates/js/README.textile
+    templates/js/README.md
     templates/js/spec
     templates/js/spec/PROJECT_spec.js
     templates/js/spec/screw-unit
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
     templates/ruby/lib/PROJECT/.gitignore
     templates/ruby/lib/PROJECT.rb
     templates/ruby/manifest.txt
-    templates/ruby/README.textile
+    templates/ruby/README.md
     templates/ruby/spec
     templates/ruby/spec/PROJECT_spec.rb
     templates/ruby/spec/spec_helper.rb
