@@ -1,3 +1,0 @@
-h1. <%= project_name %>
-
-(c) Copyright 2008 Pat Nakajima, released under MIT License.
