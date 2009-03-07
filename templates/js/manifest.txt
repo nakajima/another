@@ -1,4 +1,4 @@
-./README.textile
+./README.md
 ./spec
 ./spec/PROJECT_spec.js
 ./spec/screw-unit
