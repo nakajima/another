@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{another}
-  s.version = "0.0.8"
+  s.version = "0.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pat Nakajima"]
@@ -59,14 +59,15 @@ Gem::Specification.new do |s|
     templates/ruby/spec/spec_helper.rb
     templates/sinatra
     templates/sinatra/app.rb
+    templates/sinatra/config.ru
     templates/sinatra/manifest.txt
     templates/sinatra/public
-    templates/sinatra/public/.gitignore
+    templates/sinatra/public/style.css
     templates/sinatra/spec
     templates/sinatra/spec/PROJECT_spec.rb
     templates/sinatra/spec/spec_helper.rb
     templates/sinatra/views
-    templates/sinatra/views/.gitignore
+    templates/sinatra/views/index.erb
     
   ]
   s.require_paths = ["lib"]
