@@ -1,12 +1,13 @@
-require 'spec/spec_helper'
- 
-describe 'the app' do
-  include Elementor
-  
-  attr_reader :response, :page, :first
-  
-  it "should not blow up" do
-    get_it '/'
-    response.should be_ok
+require 'spec_helper'
+
+describe "app" do
+  before(:each) do
+    Sinatra::Base.set :environment, :test
+    @app = <%= module_name %>
+  end
+
+  it "works" do
+    get '/'
+    response.status.should == 200
   end
 end

@@ -1,9 +1,9 @@
 ./app.rb
+./config.ru
 ./public
-./public/.gitignore
+./public/style.css
 ./spec
 ./spec/PROJECT_spec.rb
 ./spec/spec_helper.rb
-./spec/.gitignore
 ./views
-./views/.gitignore
+./views/index.erb
