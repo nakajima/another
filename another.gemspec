@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{another}
-  s.version = "0.0.9"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pat Nakajima"]
@@ -63,6 +63,7 @@ Gem::Specification.new do |s|
     templates/sinatra/manifest.txt
     templates/sinatra/public
     templates/sinatra/public/style.css
+    templates/sinatra/public/jquery.js
     templates/sinatra/spec
     templates/sinatra/spec/PROJECT_spec.rb
     templates/sinatra/spec/spec_helper.rb

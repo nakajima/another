@@ -2,6 +2,7 @@
 ./config.ru
 ./public
 ./public/style.css
+./public/jquery.js
 ./spec
 ./spec/PROJECT_spec.rb
 ./spec/spec_helper.rb
